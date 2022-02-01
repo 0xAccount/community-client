@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "src": false
+    },
+    "workspace.isHidden": false
+}

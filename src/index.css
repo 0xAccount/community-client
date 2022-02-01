@@ -1,0 +1,73 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "shards-ui/dist/css/shards.min.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Open+Sans:wght@500&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #8c8c8e;
+  font-size: 12px;
+  background-color: #191923;
+  padding: 20px 5vw;
+}
+
+#root {
+  height: calc(100vh - 50px);
+}
+
+
+h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #fafafc;
+  margin-bottom: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-size: 11px;
+}
+
+.btn-default:hover {
+  text-decoration: underline;
+}
+
+
+::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	background-color: #4E4BAF;
+}
+
+
+
+textarea, .donations {
+  background-color: #25252A !important;
+  color: #FFFFFF !important;
+  font-size: 16px;
+  resize: none;
+}

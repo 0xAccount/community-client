@@ -1,0 +1,7 @@
+export const NETWORK_ID = 97;
+
+// ERC20
+export const DAI_ADDRESS = "0x8a9424745056eb399fd19a0ec26a14316684e274";
+
+// Contracts
+export const COMMUNITYDAO_ADDRESS = "0x1f36BdbF535eC41B2dE4f9c5651DA26c3247aAd3";
