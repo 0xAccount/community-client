@@ -9,11 +9,10 @@ import { AppContext } from "./context";
 import DaiERC20 from "./abi/DaiERC20.json";
 
 import Web3 from "web3";
-import { DAI_ADDRESS } from './constants';
+import { DAI_ADDRESS, NETWORK_ID } from './constants';
 
 
 function App() {
-  const NETWORK_ID = 97;
   const [web3, setWeb3] = useState({ web3: null, network: NETWORK_ID });
   const [accounts, setAccounts] = useState(null);
   const [accountBalance, setAccountBalance] = useState(0);
