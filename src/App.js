@@ -34,7 +34,7 @@ function App() {
       checkIfIsConnected();
     });
     window.ethereum.on('chainChanged', async function (networkId) {
-      if (networkId === NETWORK_ID) {
+      if ((networkId === NETWORK_ID) || (networkId === 0x38)) {
         checkIfIsConnected();
       }
       setActualWalletNetwork(networkId);
@@ -68,16 +68,16 @@ function App() {
   const requestChangeNetwork = async () => {
     try {
       const data = [{
-        chainId: '0x61',
-        chainName: 'Smart Chain - Testnet',
+        chainId: '0x38',
+        chainName: 'Binance Smart Chain Main',
         nativeCurrency:
         {
           name: 'BNB',
           symbol: 'BNB',
           decimals: 18
         },
-        rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545/'],
-        blockExplorerUrls: ['https://testnet.bscscan.com'],
+        rpcUrls: ['https://bsc-dataseed.binance.org/'],
+        // blockExplorerUrls: ['https://testnet.bscscan.com'],
       }]
       await window.ethereum.request({ method: 'wallet_addEthereumChain', params: data }).catch()
     } catch (error) {

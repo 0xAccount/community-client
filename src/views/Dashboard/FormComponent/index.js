@@ -86,7 +86,7 @@ function FormComponent({getAllTweets}) {
                 <>
                     <h5 className="text-start mb-1">Publish tweet in <a href="https://twitter.com/0xAccount" target="_blank">@0xAccount</a></h5>
                     <div className="text-start mb-4">
-                        <Link to="/documentation">Read the tutorial and rules here</Link>
+                        <Link to="https://medium.com/@0xAccount/first-decentralized-twitter-account-1e12523691d7">Read the tutorial and rules here</Link>
                     </div>
                     <div className="d-flex align-items-center mb-2">
                         <div className="col-2">

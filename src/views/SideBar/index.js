@@ -23,7 +23,7 @@ function SideBar() {
 
     useEffect(() => {
         if (accounts && accounts.length > 0) {
-            setSwitchNetwork(actualWalletNetwork !== NETWORK_ID && actualWalletNetwork !== 0x61);
+            setSwitchNetwork(actualWalletNetwork !== NETWORK_ID && actualWalletNetwork !== 0x38);
         }
     }, [accounts, actualWalletNetwork]);
 
@@ -34,7 +34,7 @@ function SideBar() {
 
     const requestChangeNetworkButton = () => (
         <div className="buttons-frame text-center mt-3">
-            <a className="btn btn-sm btn-default text-dark" onClick={() => requestChangeNetwork()} rel="noreferrer"><span>Switch to BSC Rinkeby</span></a>
+            <a className="btn btn-sm btn-default text-dark" onClick={() => requestChangeNetwork()} rel="noreferrer"><span>Switch to BSC</span></a>
         </div>
     )
 
@@ -74,7 +74,7 @@ function SideBar() {
                     <ul>
                         <li>
                             <h6>Network:</h6>
-                            <span>BSC Rinkeby</span>
+                            <span>BSC</span>
                         </li>
                         <li>
                             <h6>DAI:</h6>
@@ -86,7 +86,7 @@ function SideBar() {
                         </li>
                         <li>
                             <h6>Treasury:</h6>
-                            <span><a target="_blank" href="ads">Contract</a> {'$' + treasuryBalance}</span>
+                            <span><a target="_blank" href="https://bscscan.com/address/0x18f7B5aB35B2f23Ccb18FA3833E73eAAfA57b400">Contract</a> {'$' + treasuryBalance}</span>
                         </li>
                     </ul>
                     <hr />
@@ -96,7 +96,7 @@ function SideBar() {
                                 <button className="btn btn-sm btn-default text-white" onClick={() => history.push('/')}>🏠 Dashboard</button>
                             </li>
                             <li>
-                                <button className="btn btn-sm btn-default text-white" onClick={() => history.push('/documentation')}>📖 Documentation</button>
+                                <button className="btn btn-sm btn-default text-white" onClick={() => window.open('https://medium.com/@0xAccount/first-decentralized-twitter-account-1e12523691d7')}>📖 Documentation</button>
                             </li>
                             <li>
                                 <button className="btn btn-sm btn-default text-white" onClick={() => history.push('/roadmap')}>📜 Roadmap</button>
