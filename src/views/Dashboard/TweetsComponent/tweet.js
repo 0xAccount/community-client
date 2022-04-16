@@ -21,7 +21,7 @@ function TweetComponent({ getAllTweets, tweet }) {
             await CommunityDAOContract.methods.vote(tweetId).call({from: accounts[0]});
             await CommunityDAOContract.methods.vote(tweetId).send({from: accounts[0]});
             getAllTweets();
-            toast.success("🦄 The tweet has been successfully added");
+            toast.success("Tweet has been successfully voted");
             setLoading(false);
         } catch (error) {
             setLoading(false);
@@ -42,7 +42,7 @@ function TweetComponent({ getAllTweets, tweet }) {
 
     return (
         <div className="mt-3 border-bottom border-secondary">
-            <p>{tweet[3]}</p>
+            <p>{tweet[5]}</p>
             
             <div className="d-flex justify-content-center align-items-center mb-3">
                 <i>vote to be the next tweet</i>
@@ -52,7 +52,7 @@ function TweetComponent({ getAllTweets, tweet }) {
                         <span className="spinner-border spinner-border-sm text-secondary" role="status" aria-hidden="true"></span>
                     }
                 </button>
-                <i>{tweet[5]} votes - {formatBalance(tweet[2])} DAI</i>
+                <i>{tweet[3]} votes - {formatBalance(tweet[1])} DAI</i>
             </div>
         </div>
     )

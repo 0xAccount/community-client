@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 import { AppContext } from '../../context';
 import Web3 from "web3";
-import { COMMUNITYDAO_ADDRESS, NETWORK_ID } from '../../constants';
+import { CHAIN_INDEX, CHAIN_LIST, COMMUNITYDAO_ADDRESS, CONTRACT_URI, NETWORK_ID, NETWORK_ID_ALTERNATIVE } from '../../constants';
 import CommunityDAO from "../../abi/CommunityDAO.json";
 
 function SideBar() {
@@ -23,7 +23,7 @@ function SideBar() {
 
     useEffect(() => {
         if (accounts && accounts.length > 0) {
-            setSwitchNetwork(actualWalletNetwork !== NETWORK_ID && actualWalletNetwork !== 0x38);
+            setSwitchNetwork(actualWalletNetwork !== NETWORK_ID && actualWalletNetwork !== NETWORK_ID_ALTERNATIVE);
         }
     }, [accounts, actualWalletNetwork]);
 
@@ -65,16 +65,20 @@ function SideBar() {
                                         </div>
                         }
                     </div>
-                    <p className="px-3 mt-4">
+                    <p className="px-3 mt-1">
                         Every 24 hours a tweet from the blockchain is selected to be published on the twitter account: <br /><br />
                         <a href="https://twitter.com/0xAccount" target="_blank">@0xAccount</a>
+                    </p>
+                    <p className="px-3 mt-4 text-white">
+                        <h6>BETA</h6>
+                        <b>Alert:</b> You are in Testnet. Get free BNB <a href="https://testnet.binance.org/faucet-smart">here</a> and then swap to DAI <a href="https://pancake.kiemtienonline360.com/#/swap">here</a>
                     </p>
                 </div>
                 <div className="table py-2">
                     <ul>
                         <li>
                             <h6>Network:</h6>
-                            <span>BSC</span>
+                            <span>BSC Testnet</span>
                         </li>
                         <li>
                             <h6>DAI:</h6>
@@ -86,7 +90,7 @@ function SideBar() {
                         </li>
                         <li>
                             <h6>Treasury:</h6>
-                            <span><a target="_blank" href="https://bscscan.com/address/0x18f7B5aB35B2f23Ccb18FA3833E73eAAfA57b400">Contract</a> {'$' + treasuryBalance}</span>
+                            <span><a target="_blank" href={CONTRACT_URI}>Contract</a> {'$' + treasuryBalance}</span>
                         </li>
                     </ul>
                     <hr />

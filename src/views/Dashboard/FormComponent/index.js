@@ -14,7 +14,8 @@ function FormComponent({getAllTweets}) {
     const [donation, setDonation] = useState("");
     const [balance, setBalance] = useState(0);
 
-    const MIN_ALLOWANCE = 1000 *10**8;
+    const MIN_ALLOWANCE = web3.utils.toWei('1000', 'ether');
+    const INITIAL_APPROVE_ALLOWANCE = web3.utils.toWei('1000000', 'ether');
     const maxLength = 280;
 
 
@@ -45,10 +46,11 @@ function FormComponent({getAllTweets}) {
             const balance = donation * 10 ** 18;
             await CommunityDAOContract.methods.publishTweet(balance.toString(), content).send({from: accounts[0]});
             getAllTweets();
-            toast.success("🦄 The tweet has been successfully added");
+            toast.success("The tweet has been successfully added");
             setDonation("");
             setContent("");
             setLoading(false);
+            checkAllowance();
         } catch (error) {
             setLoading(false);
             if (typeof error === 'object') {
@@ -73,7 +75,7 @@ function FormComponent({getAllTweets}) {
     const approveAllowance = async () => {
         setLoading(true);
         const DaiContract = new web3.eth.Contract(DaiERC20.abi, DAI_ADDRESS);
-        await DaiContract.methods.approve(COMMUNITYDAO_ADDRESS, MIN_ALLOWANCE.toString()).send({from: accounts[0]});
+        await DaiContract.methods.approve(COMMUNITYDAO_ADDRESS, INITIAL_APPROVE_ALLOWANCE.toString()).send({from: accounts[0]});
         setDaiAllowance(true);
         setLoading(false);
     }
@@ -86,7 +88,7 @@ function FormComponent({getAllTweets}) {
                 <>
                     <h5 className="text-start mb-1">Publish tweet in <a href="https://twitter.com/0xAccount" target="_blank">@0xAccount</a></h5>
                     <div className="text-start mb-4">
-                        <Link to="https://medium.com/@0xAccount/first-decentralized-twitter-account-1e12523691d7">Read the tutorial and rules here</Link>
+                        <a href="https://medium.com/@0xAccount/first-decentralized-twitter-account-1e12523691d7">Read the tutorial and rules here</a>
                     </div>
                     <div className="d-flex align-items-center mb-2">
                         <div className="col-2">

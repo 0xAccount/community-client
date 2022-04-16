@@ -9,7 +9,7 @@ import { AppContext } from "./context";
 import DaiERC20 from "./abi/DaiERC20.json";
 
 import Web3 from "web3";
-import { DAI_ADDRESS, NETWORK_ID } from './constants';
+import { CHAIN_INDEX, CHAIN_LIST, DAI_ADDRESS, NETWORK_ID, NETWORK_ID_ALTERNATIVE } from './constants';
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
       checkIfIsConnected();
     });
     window.ethereum.on('chainChanged', async function (networkId) {
-      if ((networkId === NETWORK_ID) || (networkId === 0x38)) {
+      if ((networkId === NETWORK_ID) || (networkId === NETWORK_ID_ALTERNATIVE)) {
         checkIfIsConnected();
       }
       setActualWalletNetwork(networkId);
@@ -67,19 +67,11 @@ function App() {
 
   const requestChangeNetwork = async () => {
     try {
-      const data = [{
-        chainId: '0x38',
-        chainName: 'Binance Smart Chain Main',
-        nativeCurrency:
-        {
-          name: 'BNB',
-          symbol: 'BNB',
-          decimals: 18
-        },
-        rpcUrls: ['https://bsc-dataseed.binance.org/'],
-        // blockExplorerUrls: ['https://testnet.bscscan.com'],
-      }]
-      await window.ethereum.request({ method: 'wallet_addEthereumChain', params: data }).catch()
+      const data = [CHAIN_LIST[CHAIN_INDEX]]
+      await window.ethereum.request({ method: 'wallet_addEthereumChain', params: data }).catch();
+      setTimeout(() => {
+        checkIfIsConnected();
+      }, 100);
     } catch (error) {
       alert('You already have a request in your wallet');
     }

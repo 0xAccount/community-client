@@ -47,7 +47,7 @@ function Dashboard() {
 
                             <div className="banner-overlay">
                                 <div className="banner-title">
-                                    <h1 className="mb-15">Tweet what you want from<br />the blockchain</h1>
+                                    <h1 className="mb-15">Tweet and Vote<br />what you want from the <u>blockchain</u></h1>
 
                                     <img src="images/twitter-logo.png" className="banner-photo" alt="Banner photo" />
                                 </div>
