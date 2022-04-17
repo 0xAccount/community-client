@@ -96,7 +96,7 @@ function App() {
       <Router>
         <div className="App h-100">
 
-          <div className="d-flex justify-content-between align-items-center h-100">
+          <div className="d-block d-md-flex justify-content-between align-items-center h-100">
             <SideBar />
             <Routes />
           </div>

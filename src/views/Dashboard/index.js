@@ -39,7 +39,7 @@ function Dashboard() {
                 <div className="top-bg-overlay"></div>
             </div>
 
-            <div className="container-fluid px-5 pt-5 pb-3">
+            <div className="container-fluid pt-5 pb-3 px-2 px-md-0">
                 <div className="row p-60-0 p-lg-30-0 p-md-15-0">
                     <div className="col-lg-12">
                         <div className="banner">
@@ -57,9 +57,9 @@ function Dashboard() {
                 </div>
             </div>
 
-            <div className="container-fluid information px-5">
+            <div className="container-fluid information px-3 px-md-5">
                 <div className="row">
-                    <div className="col-4 text-start">
+                    <div className="col-12 col-md-4 text-start">
                         <p>
                             Next tweet
                             <span className="ms-2">
@@ -70,7 +70,7 @@ function Dashboard() {
                             </span>
                         </p>
                     </div>
-                    <div className="col-4 text-start">
+                    <div className="col-12 col-md-4 text-start">
                         <p>
                             Active
                             <span>{isActive ? "True" : "False"}</span>

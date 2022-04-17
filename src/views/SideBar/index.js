@@ -46,7 +46,7 @@ function SideBar() {
     }
 
     return (
-        <section className="col-2 left-section h-100">
+        <section className="col-sm-12 col-md-2 left-section h-100">
             <div className="h-100 position-relative">
                 <div className="header py-4">
                     <img src="/images/twitter-logo.png" alt="" className="mb-4" />

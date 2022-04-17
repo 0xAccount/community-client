@@ -9,11 +9,11 @@ export const roadmap_list = [
         status: 'warning',
         title: 'Donate for the first time',
         content: 'in progress',
-        date: 'March 2022'
+        date: 'Jun 2022'
     },
     {
         status: 'success',
-        title: 'Launch project',
+        title: 'Launch BETA project',
         content: 'ready',
         date: 'January 2022'
     }

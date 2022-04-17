@@ -24,7 +24,7 @@ function TweetsComponent() {
 
 
     return (
-        <div className="container col-10 mt-2">
+        <div className="container col-12 col-md-10 mt-2">
             <FormComponent getAllTweets={() => getAllTweets()} />
             {
                 loading &&
